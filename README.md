@@ -12,8 +12,13 @@ You will need:
 - [GNU Make][make] (probably any other Make will do, but untested)
 - A compiler like [gcc][] or [clang][]
 - The [check][libcheck] library
+- The [pkg-config][] tool
 
 Installation procedures will vary per platform.
+On Ubuntu, this looks like:
+
+    sudo apt-get update
+    sudo apt-get -y install make build-essential check pkg-config
 
 Alternately, you can invoke `nix-shell` from the [nix][] package manager;
 it will read [shell.nix](shell.nix) and set up these dependencies for you.
@@ -42,3 +47,4 @@ Pretend-library code and headers are in [libmoney](libmoney).
 [gcc]: <https://gcc.gnu.org/>
 [make]: <https://www.gnu.org/software/make/>
 [libcheck]: <https://github.com/libcheck/check>
+[pkg-config]: <https://www.freedesktop.org/wiki/Software/pkg-config/>

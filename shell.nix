@@ -14,5 +14,6 @@ stdenv.mkDerivation {
     check
     clang
     gnumake
+    pkg-config
   ];
 }

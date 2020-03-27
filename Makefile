@@ -33,7 +33,7 @@ CFLAGS += \
 program: program.c
 
 # test build linking against libcheck
-test: CFLAGS += -lcheck
+test: CLIBS += $(shell pkg-config --cflags --libs check)
 test: test.c
 
 # test-version of 'program' using address sanitizer
@@ -45,4 +45,4 @@ test_program: program.c
 
 # common build definition for all targets (they all depend on everything in libmoney)
 $(TARGETS) : $(wildcard libmoney/*.c)
-	$(CC) -o $@ $(CFLAGS) $^
+	$(CC) -o $@ $(CFLAGS) $^ $(CLIBS)
